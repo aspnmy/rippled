@@ -17,4 +17,8 @@
 */
 //==============================================================================
 
-#include "ripple_beast.cpp"
+#if ! BEAST_COMPILE_OBJECTIVE_CPP
+#error Incorrect compilation setting!
+#endif
+
+#include "ripple_beast.unity.cpp"

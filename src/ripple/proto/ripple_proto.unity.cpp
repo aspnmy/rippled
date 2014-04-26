@@ -1,7 +1,7 @@
 //------------------------------------------------------------------------------
 /*
     This file is part of rippled: https://github.com/ripple/rippled
-    Copyright (c) 2012, 2013 Ripple Labs Inc.
+    Copyright (c) 2014 Ripple Labs Inc.
 
     Permission to use, copy, modify, and/or distribute this software for any
     purpose  with  or without fee is hereby granted, provided that the above
@@ -17,34 +17,4 @@
 */
 //==============================================================================
 
-#ifndef RIPPLE_NET_H_INCLUDED
-#define RIPPLE_NET_H_INCLUDED
-
-#include "../beast/modules/beast_core/system/BeforeBoost.h"
-#include <boost/unordered_set.hpp> // For InfoSub
-
-#include <boost/asio.hpp>
-#undef DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER
-#define DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER /**/
-#include <boost/asio/ssl.hpp>
-
-#include "../ripple/resource/ripple_resource.h"
-
-#include "../ripple_basics/ripple_basics.h"
-#include "../ripple_core/ripple_core.h"
-#include "../ripple_data/ripple_data.h"
-#include "../ripple_websocket/autosocket/AutoSocket.h"
-
-#include "basics/HTTPRequest.h"
-#include "basics/HTTPClient.h"
-#include "basics/RPCServer.h"
-#include "basics/RPCDoor.h"
-#include "basics/SNTPClient.h"
-
-# include "rpc/RPCErr.h"
-# include "rpc/RPCUtil.h"
-#include "rpc/RPCCall.h"
-# include "rpc/InfoSub.h"
-#include "rpc/RPCSub.h"
-
-#endif
+#include "ripple.pb.cc"
