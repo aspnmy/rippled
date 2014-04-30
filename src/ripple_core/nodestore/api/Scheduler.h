@@ -23,17 +23,17 @@
 namespace ripple {
 namespace NodeStore {
 
-/** Contains information about a fetch operation */
+/** Contains information about a fetch operation. */
 struct FetchReport
 {
     std::chrono::milliseconds elapsed;
-    bool wasSync;
+    bool isAsync;
     bool wentToDisk;
     bool wasFound;
 };
 
-/** Contains informnation about a batch write operation */
-class BatchWriteReport
+/** Contains information about a batch write operation. */
+struct BatchWriteReport
 {
     std::chrono::milliseconds elapsed;
     int writeCount;
@@ -62,12 +62,12 @@ public:
     /** Reports completion of a fetch
         Allows the scheduler to monitor the node store's performance
     */
-    virtual void onFetch (FetchReport& report) = 0;
+    virtual void onFetch (FetchReport const& report) = 0;
 
     /** Reports the completion of a batch write
         Allows the scheduler to monitor the node store's performance
     */
-    virtual void onBatchWrite (BatchWriteReport& report) = 0;
+    virtual void onBatchWrite (BatchWriteReport const& report) = 0;
 };
 
 }

@@ -137,14 +137,14 @@ public:
 
     NodeObject::Ptr fetch (uint256 const& hash) override
     {
-        return doTimedFetch (hash, true);
+        return doTimedFetch (hash, false);
     }
 
     /** Perform a fetch and report the time it took */
-    NodeObject::Ptr doTimedFetch (uint256 const& hash, bool isSync)
+    NodeObject::Ptr doTimedFetch (uint256 const& hash, bool isAsync)
     {
         FetchReport report;
-        report.wasSync = isSync;
+        report.isAsync = isAsync;
         report.wentToDisk = false;
 
         auto const before = std::chrono::steady_clock::now();
@@ -345,7 +345,7 @@ public:
             }
 
             // Perform the read
-            doTimedFetch (hash, false);
+            doTimedFetch (hash, true);
          }
      }
 

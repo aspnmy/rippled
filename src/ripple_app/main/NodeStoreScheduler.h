@@ -38,8 +38,8 @@ public:
     void onStop ();
     void onChildrenStopped ();
     void scheduleTask (NodeStore::Task& task);
-    void onFetch (NodeStore::FetchReport& report);
-    void onBatchWrite (NodeStore::BatchWriteReport& report);
+    void onFetch (NodeStore::FetchReport const& report) override;
+    void onBatchWrite (NodeStore::BatchWriteReport const& report) override;
 
 private:
     void doTask (NodeStore::Task& task, Job&);

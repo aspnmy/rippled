@@ -31,8 +31,8 @@ public:
     ~DummyScheduler ();
     void scheduleTask (Task& task);
     void scheduledTasksStopped ();
-    void onFetch (FetchReport& report);
-    void onBatchWrite (BatchWriteReport& report);
+    void onFetch (FetchReport const& report) override;
+    void onBatchWrite (BatchWriteReport const& report) override;
 };
 
 }

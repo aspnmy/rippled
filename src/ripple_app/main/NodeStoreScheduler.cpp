@@ -58,12 +58,12 @@ void NodeStoreScheduler::doTask (NodeStore::Task& task, Job&)
         stopped();
 }
 
-void NodeStoreScheduler::onFetch (NodeStore::FetchReport& report)
+void NodeStoreScheduler::onFetch (NodeStore::FetchReport const& report)
 {
     // WRITEME
 }
 
-void NodeStoreScheduler::onBatchWrite (NodeStore::BatchWriteReport& report)
+void NodeStoreScheduler::onBatchWrite (NodeStore::BatchWriteReport const& report)
 {
     // WRITEME
 }
