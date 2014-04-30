@@ -58,4 +58,14 @@ void NodeStoreScheduler::doTask (NodeStore::Task& task, Job&)
         stopped();
 }
 
+void NodeStoreScheduler::onFetch (NodeStore::FetchReport& report)
+{
+    // WRITEME
+}
+
+void NodeStoreScheduler::onBatchWrite (NodeStore::BatchWriteReport& report)
+{
+    // WRITEME
+}
+
 } // ripple
